@@ -1,4 +1,7 @@
-const resolvedWrapper = () => {
+const resolvedWrapper = (value) => {
+  return new Promise((resolve) => {
+   resolve(value)
+  })
 };
 
 const rejectedWrapper = () => {
