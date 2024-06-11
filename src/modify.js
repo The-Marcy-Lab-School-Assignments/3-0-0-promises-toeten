@@ -1,4 +1,5 @@
 const crypto = require('crypto');
+const { resolve } = require('path');
 
 const numsToRGBColor = ([color1, color2, color3]) => {
   return `rgb(${color1}, ${color2}, ${color3})`;
@@ -12,19 +13,20 @@ const getRandomBytes = () => new Promise((resolve, reject) => {
 });
 
 const return4RandomColors = () => {
-  const colors = [];
-  return getRandomBytes()
-    .then(() => {
+  return Promise.all([
+    getRandomBytes(),
+    getRandomBytes(),
+    getRandomBytes(),
+    getRandomBytes()
+  ])
+    .then(colors => {
+      return colors.map(numsToRGBColor)
     })
-    .then(() => {
+    .catch(error => {
+      console.log(error)
+      return []
     })
-    .then(() => {
-    })
-    .then(() => {
-    })
-    .catch((err) => {
-      console.error(err);
-    });
+     
 };
 
 return4RandomColors().then(console.log);
