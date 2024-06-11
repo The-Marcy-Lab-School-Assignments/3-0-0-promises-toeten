@@ -16,7 +16,17 @@ const handleResolvedPromise = (promise) => {
 };
 
 
-const handleResolvedOrRejectedPromise = () => {
+const handleResolvedOrRejectedPromise = (promise) => {
+    return promise
+    .then(
+      val => {
+      console.log(val)
+      return val
+    },
+    (error) => {
+      console.error(`Your error message was: ${error.message}`)
+      return null
+  })
 };
 
 const pauseForMs = () => {
