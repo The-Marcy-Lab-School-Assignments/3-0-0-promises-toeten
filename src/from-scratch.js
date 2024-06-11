@@ -29,7 +29,12 @@ const handleResolvedOrRejectedPromise = (promise) => {
   })
 };
 
-const pauseForMs = () => {
+const pauseForMs = (numOfMs) => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve()
+    }, numOfMs)
+  });
 };
 
 module.exports = {
