@@ -4,7 +4,8 @@ const resolvedWrapper = (value) => {
   })
 };
 
-const rejectedWrapper = () => {
+const rejectedWrapper = (str) => {
+  return Promise.reject(new Error(str));
 };
 
 const handleResolvedPromise = () => {
