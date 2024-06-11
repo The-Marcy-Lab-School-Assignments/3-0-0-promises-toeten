@@ -24,7 +24,6 @@ const return4RandomColors = () => {
     })
     .catch(error => {
       console.log(error)
-      return []
     })
      
 };
