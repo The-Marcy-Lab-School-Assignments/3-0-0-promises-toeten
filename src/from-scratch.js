@@ -8,8 +8,13 @@ const rejectedWrapper = (str) => {
   return Promise.reject(new Error(str));
 };
 
-const handleResolvedPromise = () => {
+const handleResolvedPromise = (promise) => {
+  return promise.then(valueFromProm => {
+    console.log(valueFromProm)
+    return valueFromProm
+  })
 };
+
 
 const handleResolvedOrRejectedPromise = () => {
 };
