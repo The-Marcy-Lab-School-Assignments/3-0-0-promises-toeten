@@ -1,6 +1,6 @@
 const crypto = require('crypto');
 const { resolve } = require('path');
-
+/** FEEDBACK: For this problem, the code was meant to be repetitive but great job simplifying it! */
 const numsToRGBColor = ([color1, color2, color3]) => {
   return `rgb(${color1}, ${color2}, ${color3})`;
 };
